@@ -14,6 +14,15 @@
     <script src="scripts/vendor/modernizr.js"></script>
   </head>
   <body>
+    <header>
+      <h1>NC Aquarium</h1>
+    </header>
+    <section>
+      <nav>
+        <a href="#/fish" id="fish">Fishies</a>
+        <a href="#/rare-fish" id="rare-fish">Rare Fishies</a>
+      </nav>
+    </section>
 
     <div id="animals">
       <div class="animalContainer">
@@ -25,6 +34,19 @@
           <li><%= bio %></li>
         </ul>
       </script>
+      </div>
+    </div>
+
+    <div id="fishies">
+      <div class="fishContainer">
+        <script type="text/template" id="fish-template">
+          <img src="<%= imgurl %>"/>
+          <ul>
+            <li><%= name %></li>
+            <li><%= age %></li>
+            <li><%= bio %></li>
+          </ul>
+        </script>
       </div>
     </div>
 
