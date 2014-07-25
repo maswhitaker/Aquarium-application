@@ -1,0 +1,76 @@
+ // Bourbon & Neat
+@import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+@import url(http://fonts.googleapis.com/css?family=News+Cycle|Chelsea+Market);
+
+// Custom Styles
+header{
+  height: 100px;
+  border: solid black 5px;
+  border-radius: 15px;
+
+  h1{
+    font-family: Chelsea Market;
+    text-align: center;
+  }
+}
+
+section{
+  height: 100px;
+  width: 100%;
+  text-align: center;
+
+  nav{
+    padding-top: 20px;
+
+    a{
+      text-decoration: none;
+      font-size: 2em;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+#animals{
+  @include outer-container;
+  width: 100%;
+  height: inherit;
+  border-radius: 15px;
+  border: solid 5px black;
+
+  .animalContainer{
+    border: solid black 1px;
+    border-radius: 15px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+
+    img{
+      height: 150px;
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+    }
+  }
+}
+
+#fishies{
+  width: 100%;
+  height: inherit;
+  border-radius: 15px;
+  border: solid 5px black;
+
+  .fishContainer{
+    border: solid black 1px;
+    border-radius: 15px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+
+    img{
+      height: 150px;
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+    }
+  }
+}
