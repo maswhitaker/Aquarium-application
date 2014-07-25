@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Aquarium App</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <div id="animals">
+      <div class="animalContainer">
+      <script type="text/template" id="target-template">
+        <img src="<%= imgurl %>"/>
+        <ul>
+          <li><%= name %></li>
+          <li><%= age %></li>
+          <li><%= bio %></li>
+        </ul>
+      </script>
+      </div>
+    </div>
+
+    <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
