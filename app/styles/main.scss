@@ -13,9 +13,10 @@ $color5: #89C6EC;
 $color6: #C5E287;
 
 body{
-  background-color: $color5;
+  background-image: url('../images/ocean.png');
   color: $color6;
-
+  background-size: 100% 800px;
+  background-repeat: no-repeat;
 }
 
 header{
