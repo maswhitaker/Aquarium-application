@@ -4,16 +4,76 @@
 @import url(http://fonts.googleapis.com/css?family=News+Cycle|Chelsea+Market);
 
 // Custom Styles
+
+$color1: #063260;
+$color2: #13587F;
+$color3: #1F80B7;
+$color4: #2B9AB9;
+$color5: #89C6EC;
+$color6: #C5E287;
+
+body{
+  background-color: $color5;
+  color: $color6;
+
+}
+
 header{
   height: 100px;
-  border: solid black 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: solid $color3 5px;
   border-radius: 15px;
+  background-color: $color4;
 
   h1{
     font-family: Chelsea Market;
     text-align: center;
   }
+
+
 }
+
+#side{
+  margin-top: 40px;
+  text-align: center;
+  button{
+    @include button(pill);
+  }
+}
+#events{
+  margin-top: 50px;
+  width: 100%;
+  border: solid $color3 5px;
+  border-radius: 15px;
+  background-color: $color4;
+  text-align: center;
+  @include outer-container;
+
+  #click{
+    height: 100px;
+    border-radius: 15px;
+    border: $color5 solid 5px;
+    @include span-columns(5);
+
+  }
+
+  #hide{
+    @include span-columns(5);
+    height: 100px;
+    border-radius: 15px;
+    float: right;
+    border: $color5 solid 5px;
+  }
+
+  .gallery{
+    clear: left;
+    list-style: none;
+
+  }
+
+}
+
 
 section{
   height: 100px;

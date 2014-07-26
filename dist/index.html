@@ -16,48 +16,42 @@
   <body>
     <header>
       <h1>NC Aquarium</h1>
+      <div id='side'>
+        <button><a href="#/apply">Apply</a></button>
+        <button><a href='#/contact'>Contact</a></button>
+        <button><a href='#/membership'>Membership</a></button>
+      </div>
     </header>
 
-    <div id="events">
-      <div id='click'>
-        <h1>Events:</h1>
-      </div>
-      <ul>
-      <script type='text/template' id='event-template'>
-        <li><%= eventname %></li>
-      </script>
-      </ul>
-      <div id="hide">
-        <p>Hide</p>
-      </div>
+    <div id="apply">
+
     </div>
 
-    <section>
-      <nav>
-        <a href="#/fish" id="fish">Fishies</a>
-        <a href="#/rare-fish" id="rare-fish">Rare Fishies</a>
-      </nav>
-    </section>
-
-
-
-
-    <div id="animals">
-      <div class="animalContainer">
-      <script type="text/template" id="target-template">
-        <img src="<%= imgurl %>"/>
+    <div id="info-container">
+      <div id="events">
+        <div id='click'>
+          <h1>Events:</h1>
+        </div>
+        <div id="hide">
+          <h2>Hide</h2>
+        </div>
         <ul>
-          <li><%= name %></li>
-          <li><%= age %></li>
-          <li><%= bio %></li>
+        <script type='text/template' id='event-template'>
+          <li><%= eventname %></li>
+        </script>
         </ul>
-      </script>
       </div>
-    </div>
 
-    <div id="fishies">
-      <div class="fishContainer">
-        <script type="text/template" id="fish-template">
+      <section>
+        <nav>
+          <a href="#/fish" id="fish">Fishies</a>
+          <a href="#/rare-fish" id="rare-fish">Rare Fishies</a>
+        </nav>
+      </section>
+
+      <div id="animals">
+        <div class="animalContainer">
+        <script type="text/template" id="target-template">
           <img src="<%= imgurl %>"/>
           <ul>
             <li><%= name %></li>
@@ -65,6 +59,20 @@
             <li><%= bio %></li>
           </ul>
         </script>
+        </div>
+      </div>
+
+      <div id="fishies">
+        <div class="fishContainer">
+          <script type="text/template" id="fish-template">
+            <img src="<%= imgurl %>"/>
+            <ul>
+              <li><%= name %></li>
+              <li><%= age %></li>
+              <li><%= bio %></li>
+            </ul>
+          </script>
+        </div>
       </div>
     </div>
 

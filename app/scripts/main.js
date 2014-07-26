@@ -144,13 +144,6 @@ var GalleryView = Backbone.View.extend({
   }
 });
 
-
-
-
-
-
-
-
 var FishRouter = Backbone.Router.extend({
     routes: {
         '': 'home',
@@ -170,7 +163,6 @@ $('#hide').click(function(){
 var app_router = new FishRouter();
 
 app_router.on('route:home',function(){
-
 });
 
 app_router.on('route:fish', function () {
