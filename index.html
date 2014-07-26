@@ -17,12 +17,30 @@
     <header>
       <h1>NC Aquarium</h1>
     </header>
+
+    <div id="events">
+      <div id='click'>
+        <h1>Events:</h1>
+      </div>
+      <ul>
+      <script type='text/template' id='event-template'>
+        <li><%= eventname %></li>
+      </script>
+      </ul>
+      <div id="hide">
+        <p>Hide</p>
+      </div>
+    </div>
+
     <section>
       <nav>
         <a href="#/fish" id="fish">Fishies</a>
         <a href="#/rare-fish" id="rare-fish">Rare Fishies</a>
       </nav>
     </section>
+
+
+
 
     <div id="animals">
       <div class="animalContainer">
