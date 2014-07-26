@@ -152,16 +152,9 @@ var FishRouter = Backbone.Router.extend({
         'apply': 'apply',
         'contact': 'contact',
         'member': 'membership',
-        'fish': 'fishies'
+        'fish': 'fishies',
+        'events': 'eventList'
     }
-});
-
-$('#click').click(function(){
-  var galleryCollectionView = new GalleryCollectionView();
-});
-
-$('#hide').click(function(){
-  location.reload();
 });
 
 var app_router = new FishRouter();
@@ -173,22 +166,33 @@ app_router.on('route:home',function(){
   console.log('home route');
 });
 
+app_router.on('route:eventList',function(){
+  $('#apply').hide();
+  $('#membership').hide();
+  $('#menu').hide();
+  $('#events').show(100);
+  $('info-container').show(100);
+  var galleryCollectionView = new GalleryCollectionView();
+  console.log('route eventList');
+});
+
 app_router.on('route:membership',function(){
   $('#info-container').hide();
   $('#apply').hide();
-  $('#membership').show();
+  $('#membership').show(100);
   console.log('membership route');
 });
 
 app_router.on('route:apply',function(){
   $('#info-container').hide();
-  $('#apply').show();
+  $('#apply').show(100);
   $('#membership').hide();
   console.log('apply route');
 });
 
 app_router.on('route:fishies',function(){
   $('#info-container').show();
+  $('#menu').show();
   $('#apply').hide();
   $('#events').hide();
   $('#animals').hide();
@@ -202,7 +206,7 @@ app_router.on('route:fisher', function () {
     $('#events').hide();
     $('#apply').hide();
     $('#membership').hide();
-    $('#animals').show();
+    $('#animals').show(200);
     $('#fishies').hide();
     var animalCollectionView = new AnimalCollectionView();
     console.log('fisher route');
@@ -214,7 +218,7 @@ app_router.on('route:rare-fish', function () {
   $('#membership').hide();
   $('#apply').hide();
   $('#animals').hide();
-  $('#fishies').show();
+  $('#fishies').show(200);
     var fishCollectionView = new FishCollectionView();
     console.log('rare-fish route');
 });
