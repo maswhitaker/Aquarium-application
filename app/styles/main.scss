@@ -34,6 +34,15 @@ header{
 
 }
 
+#membership{
+  margin-top: 100px;
+
+  img{
+    height: 500px;
+    width: 100%;
+  }
+}
+
 #side{
   margin-top: 40px;
   text-align: center;
@@ -74,8 +83,15 @@ header{
 
 }
 
+#apply{
+  position: absolute;
+    top: 200px;
+
+}
+
 
 section{
+  margin-top: 100px;
   height: 100px;
   width: 100%;
   text-align: center;
@@ -96,12 +112,8 @@ section{
   @include outer-container;
   width: 100%;
   height: inherit;
-  border-radius: 15px;
-  border: solid 5px black;
 
   .animalContainer{
-    border: solid black 1px;
-    border-radius: 15px;
     width: 75%;
     margin-right: auto;
     margin-left: auto;
@@ -120,12 +132,8 @@ section{
 #fishies{
   width: 100%;
   height: inherit;
-  border-radius: 15px;
-  border: solid 5px black;
 
   .fishContainer{
-    border: solid black 1px;
-    border-radius: 15px;
     width: 75%;
     margin-right: auto;
     margin-left: auto;

@@ -147,8 +147,12 @@ var GalleryView = Backbone.View.extend({
 var FishRouter = Backbone.Router.extend({
     routes: {
         '': 'home',
-        "fish": "fish",
-        "rare-fish": "rare-fish"
+        "fisher": "fisher",
+        "rare-fish": "rare-fish",
+        'apply': 'apply',
+        'contact': 'contact',
+        'member': 'membership',
+        'fish': 'fishies'
     }
 });
 
@@ -163,19 +167,58 @@ $('#hide').click(function(){
 var app_router = new FishRouter();
 
 app_router.on('route:home',function(){
+  $('#info-container').hide();
+  $('#apply').hide();
+  $('#membership').hide();
+  console.log('home route');
 });
 
-app_router.on('route:fish', function () {
-      $('.fishContainer').css('display', 'none');
-      $('.animalContainer').css('display', 'initial');
-      var animalCollectionView = new AnimalCollectionView();
+app_router.on('route:membership',function(){
+  $('#info-container').hide();
+  $('#apply').hide();
+  $('#membership').show();
+  console.log('membership route');
+});
 
+app_router.on('route:apply',function(){
+  $('#info-container').hide();
+  $('#apply').show();
+  $('#membership').hide();
+  console.log('apply route');
+});
+
+app_router.on('route:fishies',function(){
+  $('#info-container').show();
+  $('#apply').hide();
+  $('#events').hide();
+  $('#animals').hide();
+  $('#fishies').hide();
+  $('#membership').hide();
+  console.log('fishies route');
+});
+
+app_router.on('route:fisher', function () {
+    $('#info-container').show();
+    $('#events').hide();
+    $('#apply').hide();
+    $('#membership').hide();
+    $('#animals').show();
+    $('#fishies').hide();
+    var animalCollectionView = new AnimalCollectionView();
+    console.log('fisher route');
 });
 
 app_router.on('route:rare-fish', function () {
-      $('.animalContainer').css('display', 'none');
-      $('.fishContainer').css('display', 'initial');
-      var fishCollectionView = new FishCollectionView();
+  $('#info-container').show();
+  $('#events').hide();
+  $('#membership').hide();
+  $('#apply').hide();
+  $('#animals').hide();
+  $('#fishies').show();
+    var fishCollectionView = new FishCollectionView();
+    console.log('rare-fish route');
 });
+
+
 
 Backbone.history.start();
