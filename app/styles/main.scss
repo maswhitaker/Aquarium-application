@@ -47,10 +47,16 @@ header{
 #side{
   margin-top: 40px;
   text-align: center;
+  font-family: News Cycle;
   button{
     @include button(pill);
+    a{
+      color: $color6;
+      text-decoration: none;
+    }
   }
 }
+
 #events{
   margin-top: 100px;
   width: 100%;
@@ -87,14 +93,40 @@ header{
 #apply{
   position: absolute;
     top: 200px;
+  form{
+    background-color: white;
+    margin-left: 50px;
+    color: black;
+    border-radius: 15px;
+    border: solid $color4;
+    text-align: center;
+    font-family: News Cycle;
+
+    input{
+      border-radius: 15px;
+      padding: 10px;
+      margin: 30px;
+    }
+
+    button{
+      @include button(pill);
+      margin-bottom: 30px;
+    }
+  }
+
 
 }
 
 
 section{
   margin-top: 100px;
+  background-color: $color4;
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   height: 100px;
   width: 100%;
+  font-family: Chelsea Market;
   text-align: center;
 
   nav{
