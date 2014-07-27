@@ -163,6 +163,8 @@ app_router.on('route:home',function(){
   $('#info-container').hide();
   $('#apply').hide();
   $('#membership').hide();
+  $('#animals').hide();
+  $('#fishies').hide();
   console.log('home route');
 });
 
@@ -170,6 +172,8 @@ app_router.on('route:eventList',function(){
   $('#apply').hide();
   $('#membership').hide();
   $('#menu').hide();
+  $('#animals').hide();
+  $('#fishies').hide();
   $('#events').show(100);
   $('info-container').show(100);
   var galleryCollectionView = new GalleryCollectionView();
@@ -177,16 +181,24 @@ app_router.on('route:eventList',function(){
 });
 
 app_router.on('route:membership',function(){
-  $('#info-container').hide();
+  $('#info-container').show();
+  $('#events').hide();
+  $('#menu').hide();
   $('#apply').hide();
+  $('#animals').hide();
+  $('#fishies').hide();
   $('#membership').show(100);
   console.log('membership route');
 });
 
 app_router.on('route:apply',function(){
-  $('#info-container').hide();
+  $('#info-container').show();
+  $('#events').hide();
+  $('#menu').hide();
   $('#apply').show(100);
   $('#membership').hide();
+  $('#animals').hide();
+  $('#fishies').hide();
   console.log('apply route');
 });
 
