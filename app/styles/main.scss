@@ -24,7 +24,7 @@ header{
   height: 100px;
   border: solid $color3 5px;
   border-radius: 15px;
-  background-color: $color4;
+  background-color: $color1;
 
   h1{
     font-family: Chelsea Market;
@@ -233,12 +233,13 @@ footer{
     bottom: 0px;
   height: 50px;
   width: 100%;
-  background-color: $color6;
+  background-color: $color1;
 
-  #logo{
-    float: left;
-    width: 50%;
-    background-color: white;
+  img{
+    margin-left: 20px;
+    height: 55px;
+    width: 130px;
+    z-index: 9999;
   }
 
   #social{
