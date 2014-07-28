@@ -15,14 +15,13 @@ $color6: #C5E287;
 body{
   background-image: url('../images/ocean.png');
   color: $color6;
-  background-size: 100% 800px;
+  background-size: 100% 1000px;
   background-repeat: no-repeat;
 }
 
 header{
+  opacity: .8;
   height: 100px;
-  margin-right: 10px;
-  margin-left: 10px;
   border: solid $color3 5px;
   border-radius: 15px;
   background-color: $color4;
@@ -59,6 +58,7 @@ header{
 }
 
 #events{
+  opacity: .8;
   margin-top: 100px;
   width: 100%;
   border: solid $color3 5px;
@@ -67,34 +67,64 @@ header{
   text-align: center;
   @include outer-container;
 
-  #click{
-    height: 100px;
-    border-radius: 15px;
-    border: $color5 solid 5px;
-    @include span-columns(5);
-
+  h1{
+    text-align: center;
+    font-size: 3em;
+    font-family: Chelsea Market;
+  }
+  h2{
+    float: left;
   }
 
-  #hide{
-    @include span-columns(5);
-    height: 100px;
-    border-radius: 15px;
+  h3{
     float: right;
-    border: $color5 solid 5px;
   }
 
   .gallery{
     clear: left;
     list-style: none;
+    font-family: News Cycle;
+    font-size: 1em;
 
   }
 
 }
 
 #apply{
-  margin-top: 110px;
-  margin-left: auto;
+  opacity: .95;
+  @include outer-container;
+
+  div{
+    text-align: center;
+    margin-top: 45px;
+    position: absolute;
+      left: 0px;
+    border-radius: 15px;
+    border: solid $color3 5px;
+    height: 300px;
+    @include span-columns(6);
+    background-color: $color4;
+    h1{
+      font-size: 1em;
+      font-family: Chelsea Market;
+    }
+    h2{
+      font-size: .5em;
+    }
+    a{
+      font-size: .3em;
+    }
+    p{
+      font-size: .3em;
+    }
+  }
+
   form{
+    @include span-columns(6);
+    margin-top: 45px;
+    margin-right: 10px;
+    position: absolute;
+      right: 0px;
     background-color: white;
     color: black;
     border-radius: 15px;
@@ -103,14 +133,14 @@ header{
     font-family: News Cycle;
 
     input{
+      margin-top: 10px;
       border-radius: 15px;
       padding: 10px;
-      margin: 30px;
     }
 
     button{
       @include button(pill);
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
   }
 
@@ -130,7 +160,11 @@ section{
   text-align: center;
 
   nav{
+    margin-top: 40px;
+    background-color: $color4;
+    border: solid $color3 5px;
     padding-top: 20px;
+    border-radius: 15px;
 
     a{
       text-decoration: none;
@@ -143,10 +177,15 @@ section{
 
 #animals{
   @include outer-container;
+  margin-top: 100px;
   width: 100%;
   height: inherit;
 
   .animalContainer{
+    background-color: $color4;
+    padding: 10px;
+    border: solid $color3 5px;
+    border-radius: 15px;
     width: 75%;
     margin-right: auto;
     margin-left: auto;
@@ -165,8 +204,14 @@ section{
 #fishies{
   width: 100%;
   height: inherit;
+  margin-top: 100px;
+
 
   .fishContainer{
+    background-color: $color4;
+    padding: 10px;
+    border: solid $color3 5px;
+    border-radius: 15px;
     width: 75%;
     margin-right: auto;
     margin-left: auto;
@@ -179,6 +224,30 @@ section{
       height: 150px;
       border-radius: 15px 15px 0 0;
       width: 100%;
+    }
+  }
+}
+
+footer{
+  position: fixed;
+    bottom: 0px;
+  height: 50px;
+  width: 100%;
+  background-color: $color6;
+
+  #logo{
+    float: left;
+    width: 50%;
+    background-color: white;
+  }
+
+  #social{
+    float: right;
+
+    button{
+      margin-top: 10px;
+      margin-right: 10px;
+      @include button(pill);
     }
   }
 }
