@@ -17,14 +17,7 @@
   {contactName:'North Carolina Aquarium Society', street:'3125 Poplarwood Ct. Raleigh, North Carolina 27604',suite:'Suite 160',email:'societymail@ncaquariums.com',number:''}
 ];
 
-  var Animal = Backbone.Model.extend({
-    defaults: {
-      name: '',
-      imgurl: '',
-      age: '',
-      bio: ''
-    }
-  });
+  var Animal = Backbone.Model.extend();
 
   var AnimalCollection = Backbone.Collection.extend({
     model: Animal
@@ -64,14 +57,7 @@
 
 
 
-  var Fish = Backbone.Model.extend({
-    defaults:{
-      name: '',
-      imgurl: '',
-      age: '',
-      bio: ''
-    }
-  });
+  var Fish = Backbone.Model.extend();
 
   var FishCollection = Backbone.Collection.extend({
     model: Fish
@@ -204,19 +190,24 @@ var FishRouter = Backbone.Router.extend({
       'member': 'membership',
       'fish': 'fishies',
       'events': 'eventList'
+    },
+
+    home: function() {
+      
+      console.log('home route');
     }
 });
 
 var app_router = new FishRouter();
 
-app_router.on('route:home',function(){
-  $('#info-container').hide();
-  $('#apply').hide();
-  $('#membership').hide();
-  $('#animals').hide();
-  $('#fishies').hide();
-  console.log('home route');
-});
+// app_router.on('route:home',function(){
+//   $('#info-container').hide();
+//   $('#apply').hide();
+//   $('#membership').hide();
+//   $('#animals').hide();
+//   $('#fishies').hide();
+//   console.log('home route');
+// });
 
 app_router.on('route:contactRoute',function(){
   $('#contact').show();
