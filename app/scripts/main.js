@@ -6,10 +6,16 @@
   {name:'dolphin',imgurl:'../images/dolphin.png',age: 8,bio:'dolphy dolphy!! eek eek!'},
   {name:'Yellowfish',imgurl:'../images/yellowfish.png',age: 10,bio:'a yellow goldfish'}];
 
-  var events = [{eventname:'Kids Day'},
-  {eventname:'Non-Kids Day'},
-  {eventname:'beeeep'}];
+  var events = [{eventname:'Kids Day', date: 'July 29, 2014'},
+  {eventname:'Non-Kids Day', date: 'August 15, 2014'},
+  {eventname:'beeeep', date: 'August 25, 2014'}];
 
+  var contacts = [{contactName:'North Carolina Aquarium on Roanoke Island', street:'374 Airport Road Manteo, NC 27954',suite:'',email:'rimail@ncaquariums.com',number:'800-832-3474'},
+  {contactName:'North Carolina Aquarium at Pine Knoll Shores', street:'1 Roosevelt Blvd. Pine Knoll Shores, NC 28512.',suite:'',email:'pksmail@ncaquariums.com',number:'800-832-3474'},
+  {contactName:'North Carolina Aquarium at Fort Fisher', street:'900 Loggerhead Road Kure Beach, NC 28449',suite:'',email:'ffmail@ncaquariums.com',number:'800-832-3474'},
+  {contactName:'Jennette’s Pier in Nags Head', street:'7223 So. Virginia Dare Trail Nags Head, NC 27959',suite:'',email:'',number:'252-255-1501'},
+  {contactName:'North Carolina Aquarium Society', street:'3125 Poplarwood Ct. Raleigh, North Carolina 27604',suite:'Suite 160',email:'societymail@ncaquariums.com',number:''}
+];
 
   var Animal = Backbone.Model.extend({
     defaults: {
@@ -144,16 +150,60 @@ var GalleryView = Backbone.View.extend({
   }
 });
 
+// var Contact = Backbone.Model.extend({
+//     defaults:{
+//       contactName: '',
+//       street: '',
+//       suite: '',
+//       email: '',
+//       number: ''
+//     }
+// });
+//
+// var Rolodex = Backbone.Collection.extend({
+//   model: Contact
+// });
+//
+// var RolodexView = Backbone.View.extend({
+//   el:$('#contact'),
+//   intialize: function(){
+//     this.collection = new Rolodex(contacts);
+//     this.render();
+//   },
+//   render: function(){
+//     var that = this;
+//     _.each(this.collection.models,function(item){
+//       that.renderContact(item);
+//     },this);
+//   },
+//   renderContact: function(item){
+//     var contactView = new ContactView({
+//       model: item
+//     });
+//     this.$el.append(contactView.render().el);
+//   }
+// });
+//
+// var ContactView = Backbone.View.extend({
+//   tagName: 'li',
+//   template: $('#contact-template').html(),
+//   render: function(){
+//     var tmpl = _.template(this.template);
+//     this.$el.html(tmpl(this.model.toJSON()));
+//     return this;
+//   }
+// });
+
 var FishRouter = Backbone.Router.extend({
     routes: {
-        '': 'home',
-        "fisher": "fisher",
-        "rare-fish": "rare-fish",
-        'apply': 'apply',
-        'contact': 'contact',
-        'member': 'membership',
-        'fish': 'fishies',
-        'events': 'eventList'
+      '': 'home',
+      "fisher": "fisher",
+      "rare-fish": "rare-fish",
+      'apply': 'apply',
+      'contact': 'contactRoute',
+      'member': 'membership',
+      'fish': 'fishies',
+      'events': 'eventList'
     }
 });
 
@@ -166,6 +216,19 @@ app_router.on('route:home',function(){
   $('#animals').hide();
   $('#fishies').hide();
   console.log('home route');
+});
+
+app_router.on('route:contactRoute',function(){
+  $('#contact').show();
+  $('#apply').hide();
+  $('#membership').hide();
+  $('#menu').hide();
+  $('#animals').hide();
+  $('#fishies').hide();
+  $('#events').hide();
+  $('info-container').hide();
+  console.log('contact route');
+  var rolodexView = new RolodexView();
 });
 
 app_router.on('route:eventList',function(){

@@ -26,12 +26,24 @@
       <h1>NC Aquarium</h1>
       <div id='side'>
         <button><a href="#/apply">Apply</a></button>
-        <button><a href='#/contact'>Contact</a></button>
+        <!-- <button><a href='#/contact'>Contact</a></button> -->
         <button><a href='#/member'>Membership</a></button>
-        <button><a href="#/fish">Fish</a></button>
+        <button><a href="#/fish">Kids</a></button>
         <button><a href="#/events">Events</a></button>
       </div>
     </header>
+
+    <!-- <div id="contact">
+      <script type="text/template" id="contact-template">
+        <h1><%= contactName %></h1>
+        <h2>Mailing Address:</h2>
+        <p><%= street %></p>
+        <p><%= suite %></p>
+        <p><%= email %></p>
+        <p><%= number %></p>
+        <hr/>
+      </script>
+    </div> -->
 
     <div id="membership">
       <img src="../images/membership.png">
@@ -54,7 +66,7 @@
         <h1>Events:</h1>
         <ul>
         <script type='text/template' id='event-template'>
-          <li><%= eventname %></li>
+          <li><h2><%= eventname %></h2><h3><%= date %></h3></li>
         </script>
         </ul>
       </div>
