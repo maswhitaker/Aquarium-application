@@ -184,7 +184,7 @@ var FishRouter = Backbone.Router.extend({
     routes: {
       '': 'home',
       "fisher": "fisher",
-      "rare-fish": "rare-fish",
+      "rare-fish": "rarefish",
       'apply': 'apply',
       'contact': 'contactRoute',
       'member': 'membership',
@@ -193,13 +193,90 @@ var FishRouter = Backbone.Router.extend({
     },
 
     home: function() {
-      
+      $('#info-container').hide();
+      $('#apply').hide();
+      $('#membership').hide();
+      $('#animals').hide();
+      $('#fishies').hide();
       console.log('home route');
+    },
+    contactRoute: function(){
+      $('#contact').show();
+      $('#apply').hide();
+      $('#membership').hide();
+      $('#menu').hide();
+      $('#animals').hide();
+      $('#fishies').hide();
+      $('#events').hide();
+      $('info-container').hide();
+      console.log('contact route');
+      var rolodexView = new RolodexView();
+    },
+    eventList: function(){
+      $('#apply').hide();
+      $('#membership').hide();
+      $('#menu').hide();
+      $('#animals').hide();
+      $('#fishies').hide();
+      $('#events').show(100);
+      $('info-container').show(100);
+      var galleryCollectionView = new GalleryCollectionView();
+      console.log('route eventList');
+    },
+    membership: function(){
+      $('#info-container').show();
+      $('#events').hide();
+      $('#menu').hide();
+      $('#apply').hide();
+      $('#animals').hide();
+      $('#fishies').hide();
+      $('#membership').show(100);
+      console.log('membership route');
+    },
+    apply: function(){
+      $('#info-container').show();
+      $('#events').hide();
+      $('#menu').hide();
+      $('#apply').show(100);
+      $('#membership').hide();
+      $('#animals').hide();
+      $('#fishies').hide();
+      console.log('apply route');
+    },
+    fishies: function(){
+      $('#info-container').show();
+      $('#menu').show();
+      $('#apply').hide();
+      $('#events').hide();
+      $('#animals').hide();
+      $('#fishies').hide();
+      $('#membership').hide();
+      console.log('fishies route');
+    },
+    fisher: function(){
+      $('#info-container').show();
+      $('#events').hide();
+      $('#apply').hide();
+      $('#membership').hide();
+      $('#animals').show(200);
+      $('#fishies').hide();
+      var animalCollectionView = new AnimalCollectionView();
+      console.log('fisher route');
+    },
+    rarefish: function(){
+      $('#info-container').show();
+      $('#events').hide();
+      $('#membership').hide();
+      $('#apply').hide();
+      $('#animals').hide();
+      $('#fishies').show(200);
+      var fishCollectionView = new FishCollectionView();
+      console.log('rare-fish route');
     }
 });
 
 var app_router = new FishRouter();
-
+//
 // app_router.on('route:home',function(){
 //   $('#info-container').hide();
 //   $('#apply').hide();
@@ -208,86 +285,86 @@ var app_router = new FishRouter();
 //   $('#fishies').hide();
 //   console.log('home route');
 // });
-
-app_router.on('route:contactRoute',function(){
-  $('#contact').show();
-  $('#apply').hide();
-  $('#membership').hide();
-  $('#menu').hide();
-  $('#animals').hide();
-  $('#fishies').hide();
-  $('#events').hide();
-  $('info-container').hide();
-  console.log('contact route');
-  var rolodexView = new RolodexView();
-});
-
-app_router.on('route:eventList',function(){
-  $('#apply').hide();
-  $('#membership').hide();
-  $('#menu').hide();
-  $('#animals').hide();
-  $('#fishies').hide();
-  $('#events').show(100);
-  $('info-container').show(100);
-  var galleryCollectionView = new GalleryCollectionView();
-  console.log('route eventList');
-});
-
-app_router.on('route:membership',function(){
-  $('#info-container').show();
-  $('#events').hide();
-  $('#menu').hide();
-  $('#apply').hide();
-  $('#animals').hide();
-  $('#fishies').hide();
-  $('#membership').show(100);
-  console.log('membership route');
-});
-
-app_router.on('route:apply',function(){
-  $('#info-container').show();
-  $('#events').hide();
-  $('#menu').hide();
-  $('#apply').show(100);
-  $('#membership').hide();
-  $('#animals').hide();
-  $('#fishies').hide();
-  console.log('apply route');
-});
-
-app_router.on('route:fishies',function(){
-  $('#info-container').show();
-  $('#menu').show();
-  $('#apply').hide();
-  $('#events').hide();
-  $('#animals').hide();
-  $('#fishies').hide();
-  $('#membership').hide();
-  console.log('fishies route');
-});
-
-app_router.on('route:fisher', function () {
-    $('#info-container').show();
-    $('#events').hide();
-    $('#apply').hide();
-    $('#membership').hide();
-    $('#animals').show(200);
-    $('#fishies').hide();
-    var animalCollectionView = new AnimalCollectionView();
-    console.log('fisher route');
-});
-
-app_router.on('route:rare-fish', function () {
-  $('#info-container').show();
-  $('#events').hide();
-  $('#membership').hide();
-  $('#apply').hide();
-  $('#animals').hide();
-  $('#fishies').show(200);
-    var fishCollectionView = new FishCollectionView();
-    console.log('rare-fish route');
-});
+//
+// app_router.on('route:contactRoute',function(){
+//   $('#contact').show();
+//   $('#apply').hide();
+//   $('#membership').hide();
+//   $('#menu').hide();
+//   $('#animals').hide();
+//   $('#fishies').hide();
+//   $('#events').hide();
+//   $('info-container').hide();
+//   console.log('contact route');
+//   var rolodexView = new RolodexView();
+// });
+//
+// app_router.on('route:eventList',function(){
+//   $('#apply').hide();
+//   $('#membership').hide();
+//   $('#menu').hide();
+//   $('#animals').hide();
+//   $('#fishies').hide();
+//   $('#events').show(100);
+//   $('info-container').show(100);
+//   var galleryCollectionView = new GalleryCollectionView();
+//   console.log('route eventList');
+// });
+//
+// app_router.on('route:membership',function(){
+//   $('#info-container').show();
+//   $('#events').hide();
+//   $('#menu').hide();
+//   $('#apply').hide();
+//   $('#animals').hide();
+//   $('#fishies').hide();
+//   $('#membership').show(100);
+//   console.log('membership route');
+// });
+//
+// app_router.on('route:apply',function(){
+//   $('#info-container').show();
+//   $('#events').hide();
+//   $('#menu').hide();
+//   $('#apply').show(100);
+//   $('#membership').hide();
+//   $('#animals').hide();
+//   $('#fishies').hide();
+//   console.log('apply route');
+// });
+//
+// app_router.on('route:fishies',function(){
+//   $('#info-container').show();
+//   $('#menu').show();
+//   $('#apply').hide();
+//   $('#events').hide();
+//   $('#animals').hide();
+//   $('#fishies').hide();
+//   $('#membership').hide();
+//   console.log('fishies route');
+// });
+//
+// app_router.on('route:fisher', function () {
+//     $('#info-container').show();
+//     $('#events').hide();
+//     $('#apply').hide();
+//     $('#membership').hide();
+//     $('#animals').show(200);
+//     $('#fishies').hide();
+//     var animalCollectionView = new AnimalCollectionView();
+//     console.log('fisher route');
+// });
+//
+// app_router.on('route:rare-fish', function () {
+//   $('#info-container').show();
+//   $('#events').hide();
+//   $('#membership').hide();
+//   $('#apply').hide();
+//   $('#animals').hide();
+//   $('#fishies').show(200);
+//     var fishCollectionView = new FishCollectionView();
+//     console.log('rare-fish route');
+// });
 
 
 
